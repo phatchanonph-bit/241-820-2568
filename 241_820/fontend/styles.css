@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* glass card */
+.container {
+    width: 430px;
+    padding: 35px 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* title */
+.header {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #7f7cff, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* layout */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    margin-bottom: 20px;
+}
+
+.header-form {
+    width: 90px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* inputs */
+.form,
+textarea {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.form::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form:focus,
+textarea:focus {
+    outline: none;
+    border-color: #7f7cff;
+    box-shadow: 0 0 15px rgba(127, 124, 255, 0.6);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    min-height: 90px;
+}
+
+/* radio & checkbox */
+.gender .flex div,
+.form-input div {
+    margin-right: 16px;
+    font-size: 14px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #7f7cff;
+    cursor: pointer;
+}
+
+/* button */
+.center {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button {
+    padding: 14px 45px;
+    font-size: 16px;
+    border-radius: 35px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(135deg, #7f7cff, #4facfe);
+    box-shadow: 0 10px 25px rgba(79, 172, 254, 0.45);
+    transition: 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(79, 172, 254, 0.65);
+}
+
+.button:active {
+    transform: scale(0.96);
+}
