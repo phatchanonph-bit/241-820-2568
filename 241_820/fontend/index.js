@@ -1,25 +1,29 @@
-function submitData() {
-    let firstnameDOM = document.querySelector('input[name="firstname"]');
-    let lastnameDOM = document.querySelector('input[name="lastname"]');
-    let ageDOM = document.querySelector('input[name="age"]');
+const submitData = async() => {
+    let firstNameDOM = document.querySelector('input[name=firstname]');
+    let lastNameDOM = document.querySelector('input[name=lastname]');
+    let ageDOM = document.querySelector('input[name=age]');
+    let genderDOM = document.querySelector('input[name=gender]:checked');
+    let interestDOMs = document.querySelectorAll('input[name=interest]:checked');
+    let descriptionDOM = document.querySelector('textarea[name=description]');
 
-    let genderDOM = document.querySelector('input[name="gender"]:checked');
-    let interestDOMs = document.querySelectorAll('input[name="interest"]:checked');
-    let descriptionDOM = document.querySelector('textarea[name="description"]');
+    let interest = ''
+    for (let i = 0; i < interestDOMs.length; i++) {
+        interest += interestDOMs[i].value
+        if (i != interestDOMs.length - 1) {
+            interest += ','
+        }
+    }
 
-    let interests = [];
-    interestDOMs.forEach(item => {
-        interests.push(item.value);
-    });
 
-    let usersData = {
-        firstname: firstnameDOM.value,
-        lastname: lastnameDOM.value,
+    let userData ={
+        firstName: firstNameDOM.value,
+        lastName: lastNameDOM.value,
         age: ageDOM.value,
-        gender: genderDOM ? genderDOM.value : null,
-        description: descriptionDOM.value,
-        interests: interests
-    };
-
-    console.log('submitData', usersData);
-}
+        gender: genderDOM.value,
+        desription: descriptionDOM.value,
+        interest: interest
+    }
+    console.log('submitData', userData) ;
+    const respose = await axios.post('http://localhost:8000/users', userData)
+    console.log('response', respose);
+ }
